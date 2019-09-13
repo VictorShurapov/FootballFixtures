@@ -7,5 +7,6 @@ target 'ForzaFixtures1' do
 
   # Pods for ForzaFixtures1
 pod 'SwiftLint'
+pod 'MaterialComponents'
 
 end

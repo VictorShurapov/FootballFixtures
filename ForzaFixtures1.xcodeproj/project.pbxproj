@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,10 @@
 		B2C5E8172327D2F900505305 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C5E8152327D2F900505305 /* Main.storyboard */; };
 		B2C5E8192327D2FB00505305 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2C5E8182327D2FB00505305 /* Assets.xcassets */; };
 		B2C5E81C2327D2FB00505305 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C5E81A2327D2FB00505305 /* LaunchScreen.storyboard */; };
+		B2C5E825232A9F9800505305 /* FixturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5E824232A9F9800505305 /* FixturesViewController.swift */; };
+		B2C5E827232A9FB600505305 /* Fixtures.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C5E826232A9FB600505305 /* Fixtures.storyboard */; };
+		B2C5E82A232AA02300505305 /* FixturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5E829232AA02300505305 /* FixturesViewModel.swift */; };
+		B2C5E82C232AA69200505305 /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5E82B232AA69200505305 /* MatchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		B2C5E8182327D2FB00505305 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2C5E81B2327D2FB00505305 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2C5E81D2327D2FB00505305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2C5E824232A9F9800505305 /* FixturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixturesViewController.swift; sourceTree = "<group>"; };
+		B2C5E826232A9FB600505305 /* Fixtures.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Fixtures.storyboard; sourceTree = "<group>"; };
+		B2C5E829232AA02300505305 /* FixturesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixturesViewModel.swift; sourceTree = "<group>"; };
+		B2C5E82B232AA69200505305 /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,12 +79,24 @@
 			children = (
 				B2C5E8112327D2F900505305 /* AppDelegate.swift */,
 				B2C5E8132327D2F900505305 /* ViewController.swift */,
+				B2C5E828232A9FBD00505305 /* Fixtures */,
 				B2C5E8152327D2F900505305 /* Main.storyboard */,
 				B2C5E8182327D2FB00505305 /* Assets.xcassets */,
 				B2C5E81A2327D2FB00505305 /* LaunchScreen.storyboard */,
 				B2C5E81D2327D2FB00505305 /* Info.plist */,
 			);
 			path = ForzaFixtures1;
+			sourceTree = "<group>";
+		};
+		B2C5E828232A9FBD00505305 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				B2C5E824232A9F9800505305 /* FixturesViewController.swift */,
+				B2C5E826232A9FB600505305 /* Fixtures.storyboard */,
+				B2C5E829232AA02300505305 /* FixturesViewModel.swift */,
+				B2C5E82B232AA69200505305 /* MatchTableViewCell.swift */,
+			);
+			path = Fixtures;
 			sourceTree = "<group>";
 		};
 		BD4B4A2E78BE6D13305F63DF /* Pods */ = {
@@ -100,6 +120,7 @@
 				B2C5E80B2327D2F900505305 /* Frameworks */,
 				B2C5E80C2327D2F900505305 /* Resources */,
 				B2C5E82323293DBE00505305 /* ShellScript */,
+				6786240AA3107E9C51C1759E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -148,6 +169,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2C5E827232A9FB600505305 /* Fixtures.storyboard in Resources */,
 				B2C5E81C2327D2FB00505305 /* LaunchScreen.storyboard in Resources */,
 				B2C5E8192327D2FB00505305 /* Assets.xcassets in Resources */,
 				B2C5E8172327D2F900505305 /* Main.storyboard in Resources */,
@@ -179,6 +201,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6786240AA3107E9C51C1759E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ForzaFixtures1/Pods-ForzaFixtures1-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ForzaFixtures1/Pods-ForzaFixtures1-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ForzaFixtures1/Pods-ForzaFixtures1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B2C5E82323293DBE00505305 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -203,8 +242,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2C5E82A232AA02300505305 /* FixturesViewModel.swift in Sources */,
 				B2C5E8142327D2F900505305 /* ViewController.swift in Sources */,
+				B2C5E82C232AA69200505305 /* MatchTableViewCell.swift in Sources */,
 				B2C5E8122327D2F900505305 /* AppDelegate.swift in Sources */,
+				B2C5E825232A9F9800505305 /* FixturesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
