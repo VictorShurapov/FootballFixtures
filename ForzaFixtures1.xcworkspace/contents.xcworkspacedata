@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ForzaFixtures1.xcodeproj">
+      location = "group:/Users/viktorx/Documents/ForzaFixtures1/ForzaFixtures.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
