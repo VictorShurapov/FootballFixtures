@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cachable
 
 struct HomeTeam: Codable {
     var teamID: Int
@@ -43,11 +44,16 @@ struct MatchModel: Codable {
     var round: String
 }
 
-struct ApiResponse: Codable {
+struct FixturesData: Cachable, Codable {
+    
+    var fileName: String {
+        return "worldCupFixtures"
+    }
+    
     let results: Int
     let fixtures: [MatchModel]
 }
 
 struct Meta: Codable {
-    let api: ApiResponse
+    let api: FixturesData
 }

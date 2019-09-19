@@ -1,0 +1,6 @@
+framework module Cachable {
+  umbrella header "Cachable-umbrella.h"
+
+  export *
+  module * { export * }
+}

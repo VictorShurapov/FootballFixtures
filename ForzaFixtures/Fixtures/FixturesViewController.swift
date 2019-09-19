@@ -8,6 +8,7 @@
 
 import UIKit
 import MaterialComponents
+import Cachable
 
 class FixturesViewController: UIViewController {
 
@@ -28,7 +29,7 @@ class FixturesViewController: UIViewController {
     }
     
     func getFixtures() {
-        viewModel.getFixturesForWorldCupWith(completion: { self.setupFixturesForRoundWith() }, errorDescription: { (errorDescription) in
+        viewModel.getFixturesForWorldCup(completion: { self.setupFixturesForRoundWith() }, errorDescription: { (errorDescription) in
             self.showAlert(errorMessage: errorDescription)
         })
     }

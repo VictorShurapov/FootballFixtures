@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.9.0)
+  - Cachable (1.2.1)
   - Kingfisher (5.7.1)
   - MaterialComponents (89.0.0):
     - MaterialComponents/ActionSheet (= 89.0.0)
@@ -664,6 +665,7 @@ PODS:
   - SwiftLint (0.35.0)
 
 DEPENDENCIES:
+  - Cachable
   - Kingfisher
   - MaterialComponents
   - Moya
@@ -672,6 +674,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Cachable
     - Kingfisher
     - MaterialComponents
     - MDFInternationalization
@@ -685,6 +688,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  Cachable: af3b7624756db339513c83fedeac67b046f22638
   Kingfisher: 176d377ad339113c99ad4980cbae687f807e20fe
   MaterialComponents: 82a817165f3ca2df0e3f321a9d05d08bb152c7f8
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
@@ -696,6 +700,6 @@ SPEC CHECKSUMS:
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SwiftLint: 5553187048b900c91aa03552807681bb6b027846
 
-PODFILE CHECKSUM: f1562e211e6af21efad4ba6d636ee2e470ff1a23
+PODFILE CHECKSUM: f267ab583d7b181fc703f9b5c95fa742c67b5653
 
 COCOAPODS: 1.7.5

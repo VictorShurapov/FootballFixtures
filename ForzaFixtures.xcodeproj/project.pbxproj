@@ -85,12 +85,12 @@
 		B2C5E8102327D2F900505305 /* ForzaFixtures */ = {
 			isa = PBXGroup;
 			children = (
-				B2C5E8112327D2F900505305 /* AppDelegate.swift */,
-				B2C5E833232C388A00505305 /* MatchModel.swift */,
+				B2C5E828232A9FBD00505305 /* Fixtures */,
+				B2CB7C4A2333CB82000E356F /* Models */,
 				B2C5E832232C2AB700505305 /* Network */,
 				B2C5E83A23303B2C00505305 /* Protocols */,
 				B2C5E831232C2AAB00505305 /* Extensions */,
-				B2C5E828232A9FBD00505305 /* Fixtures */,
+				B2C5E8112327D2F900505305 /* AppDelegate.swift */,
 				B2C5E8182327D2FB00505305 /* Assets.xcassets */,
 				B2C5E81A2327D2FB00505305 /* LaunchScreen.storyboard */,
 				B2C5E81D2327D2FB00505305 /* Info.plist */,
@@ -140,6 +140,14 @@
 				B2C5E83823303A0500505305 /* Reusable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B2CB7C4A2333CB82000E356F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B2C5E833232C388A00505305 /* MatchModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		BD4B4A2E78BE6D13305F63DF /* Pods */ = {

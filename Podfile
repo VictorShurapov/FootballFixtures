@@ -10,6 +10,7 @@ pod 'SwiftLint'
 pod 'MaterialComponents'
 pod 'Moya'
 pod 'Kingfisher'
+pod 'Cachable'
 
 
 end

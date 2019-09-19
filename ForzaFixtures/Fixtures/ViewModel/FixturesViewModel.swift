@@ -8,13 +8,24 @@
 
 import Foundation
 import Moya
+import Cachable
 
 class FixturesViewModel {
     
+    // MARK: - Properties
     var fixtures = [MatchModel]()
     var currentRound = "1/8"
     var mathesForRound = [MatchModel]()
     
+    // MARK: - MoyaProvider
+    let provider = MoyaProvider<ForzaFixturesAPI>()
+
+    // MARK: - Cacher
+    // Create a cacher and use the temporary directory
+    let cacher: Cacher = Cacher(destination: .temporary)
+    
+
+    // MARK: - Methods
     func getRoundNameFor(itemTag: Int) -> String? {
         switch itemTag {
         case 0:
@@ -46,26 +57,91 @@ class FixturesViewModel {
         }
     }
     
-    let provider = MoyaProvider<ForzaFixturesAPI>()
     
-    public func getFixturesForWorldCupWith(id: Int = 1, completion: @escaping () -> Void, errorDescription: @escaping (_ description: String) -> Void) {
+    func getFixturesForWorldCup(completion: @escaping () -> Void, errorDescription: @escaping (_ description: String) -> Void) {
         
-        provider.request(.getFixturesForLegueWith(id: id)) { (result) in
-            switch result {
-            case .success(let response):
-                
-                do {
-                    let decoder = JSONDecoder()
-                    self.fixtures = try decoder.decode(Meta.self, from: response.data).api.fixtures
-                    print("RTVSF")
-                    completion()
-                } catch let error {
+        // Check for fixtures in cache
+        if let fixturesData: FixturesData = cacher.load(fileName: "worldCupFixtures") {
+            // Populate fixtures with the cached one
+            fixtures = fixturesData.fixtures
+            completion()
+        } else {
+            
+            // If there are no fixtures in cache
+            // download them from server and write to cache
+            // default legue is world cup with ID number 1
+            provider.request(.getFixturesForLegueWith(id: 1)) { (result) in
+                switch result {
+                case .success(let response):
+                    do {
+                        let decoder = JSONDecoder()
+                        
+                        let apiResponse = try decoder.decode(Meta.self, from: response.data).api
+                        self.writeToCache(fixturesData: apiResponse)
+
+                        self.fixtures = apiResponse.fixtures
+
+                        print("RTVSF")
+                        completion()
+                    } catch let error {
+                        errorDescription(error.localizedDescription)
+                        print("An error occured: \(error)")
+                    }
+                case .failure(let error):
                     errorDescription(error.localizedDescription)
-                    print("An error occured: \(error)")
+                    print(error)
                 }
-            case .failure(let error):
-                errorDescription(error.localizedDescription)
-                print(error)
             }
         }
-    }}
+    }
+    
+    func writeToCache(fixturesData: FixturesData) {
+        cacher.persist(item: fixturesData) { url, error in
+            if let error = error {
+                print("Fixtures data failed to persist: \(error)")
+            } else {
+                print("Fixtures data persisted in \(String(describing: url))")
+            }
+        }
+    }
+}
+
+//    func getFixturesFromCache(completion: @escaping () -> Void, errorDescription: @escaping (_ description: String) -> Void) {
+//
+//        if let fixturesData: FixturesData = cacher.load(fileName: "worldCupFixtures") {
+//            // Populate fixtures with the cached one
+//            fixtures = fixturesData.fixtures
+//            completion()
+//
+//        } else {
+//
+//        }
+//
+//    }
+
+//    public func getFixturesForWorldCupWith(id: Int = 1, completion: @escaping () -> Void, errorDescription: @escaping (_ description: String) -> Void) {
+//
+//        provider.request(.getFixturesForLegueWith(id: id)) { (result) in
+//            switch result {
+//            case .success(let response):
+//
+//                do {
+//                    let decoder = JSONDecoder()
+//
+//                    //self.fixtures = try decoder.decode(Meta.self, from: response.data).api.fixtures
+//                    let apiResponse = try decoder.decode(Meta.self, from: response.data).api
+//
+//                    self.writeToCache(fixturesData: apiResponse)
+//
+//                    print("RTVSF")
+//                    completion()
+//                } catch let error {
+//                    errorDescription(error.localizedDescription)
+//                    print("An error occured: \(error)")
+//                }
+//            case .failure(let error):
+//                errorDescription(error.localizedDescription)
+//                print(error)
+//            }
+//        }
+//    }}
