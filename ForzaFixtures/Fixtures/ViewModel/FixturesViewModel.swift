@@ -24,7 +24,6 @@ class FixturesViewModel {
     // Create a cacher and use the temporary directory
     let cacher: Cacher = Cacher(destination: .temporary)
     
-
     // MARK: - Methods
     func getRoundNameFor(itemTag: Int) -> String? {
         switch itemTag {
@@ -56,7 +55,6 @@ class FixturesViewModel {
             mathesForRound = fixtures.filter { $0.round == round }
         }
     }
-    
     
     func getFixturesForWorldCup(completion: @escaping () -> Void, errorDescription: @escaping (_ description: String) -> Void) {
         

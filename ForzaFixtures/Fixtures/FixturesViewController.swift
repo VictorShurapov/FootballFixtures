@@ -13,7 +13,10 @@ import Cachable
 class FixturesViewController: UIViewController {
 
     @IBOutlet weak var roundsTabBar: UIView!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: FixturesTableView!
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
+    
+    var tabBar = MDCTabBar()
     
     // MARK: - ViewModel
     fileprivate let viewModel = FixturesViewModel()
@@ -21,21 +24,25 @@ class FixturesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        tableView.estimatedRowHeight = 82.0
-//        tableView.rowHeight = UITableView.automaticDimension
-        
-        setTabBar()
+        addTabBar()
         getFixtures()
     }
     
-    func getFixtures() {
+//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+//        super.viewWillTransition(to: size, with: coordinator)
+//        tabBar.layoutIfNeeded()
+//    }
+
+    // MARK: - Methods
+
+    private func getFixtures() {
         viewModel.getFixturesForWorldCup(completion: { self.setupFixturesForRoundWith() }, errorDescription: { (errorDescription) in
             self.showAlert(errorMessage: errorDescription)
         })
     }
     
-    fileprivate func setTabBar() {
-        let tabBar = MDCTabBar(frame: roundsTabBar.bounds)
+    fileprivate func addTabBar() {
+        tabBar.frame = roundsTabBar.bounds
         tabBar.delegate = self
         tabBar.items = [
             UITabBarItem(title: NSLocalizedString("1/8", comment: "TabBar title for available products"), image: nil, tag: 0),
@@ -45,9 +52,11 @@ class FixturesViewController: UIViewController {
             
         ]
         tabBar.itemAppearance = .titles
+        tabBar.autoresizingMask = [.flexibleWidth]
+
         tabBar.barTintColor = .black
         tabBar.inkColor = .clear
-        tabBar.tintColor = .blue
+        tabBar.tintColor = UIColor(red: 30/255, green: 215/255, blue: 96/255, alpha: 1.0)
         tabBar.setTitleColor(.white, for: .normal)
         tabBar.setTitleColor(.white, for: .selected)
         tabBar.selectedItemTitleFont = UIFont.systemFont(ofSize: 14, weight: .semibold)
