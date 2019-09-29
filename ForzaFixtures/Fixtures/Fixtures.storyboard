@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Плей-офф-->
+        <!--World Cup Play-off-->
         <scene sceneID="zIt-u1-5dZ">
             <objects>
                 <viewController id="Ta8-fZ-QBP" customClass="FixturesViewController" customModule="ForzaFixtures" customModuleProvider="target" sceneMemberID="viewController">
@@ -39,17 +39,17 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="398" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8x-sS-Pot">
-                                                            <rect key="frame" x="16" y="11.5" width="35" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="PEN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8x-sS-Pot">
+                                                            <rect key="frame" x="16" y="11.5" width="33" height="20.5"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="35" id="ZZ8-0M-EKZ"/>
+                                                                <constraint firstAttribute="width" constant="33" id="Pnn-DP-Wpz"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="orD-j9-sac" userLabel="ScoreView">
-                                                            <rect key="frame" x="67" y="0.0" width="25" height="43.5"/>
+                                                            <rect key="frame" x="65" y="0.0" width="25" height="43.5"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="48i-Te-NuW">
                                                                     <rect key="frame" x="7.5" y="-0.5" width="10" height="44.5"/>
@@ -78,7 +78,7 @@
                                                             </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="bUS-n5-nU8">
-                                                            <rect key="frame" x="118.5" y="0.5" width="199.5" height="43"/>
+                                                            <rect key="frame" x="116.5" y="0.5" width="201.5" height="43"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="HsE-rq-sBL">
                                                                     <rect key="frame" x="0.0" y="0.0" width="100.5" height="20"/>
@@ -168,7 +168,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UTO-uW-lfS"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Плей-офф" id="aml-Rx-Tri"/>
+                    <navigationItem key="navigationItem" title="World Cup Play-off" id="aml-Rx-Tri"/>
                     <connections>
                         <outlet property="roundsTabBar" destination="AYX-en-rSP" id="xnx-It-iiX"/>
                         <outlet property="tableView" destination="r2C-qv-iIn" id="CMo-1O-Hh7"/>

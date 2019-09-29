@@ -11,7 +11,7 @@ import Kingfisher
 
 class MatchTableViewCell: UITableViewCell {
     
-    // MARK:- IBOutlets and IBActions
+    // MARK: - IBOutlets and IBActions
 
     @IBOutlet weak var matchStatus: UILabel!
     @IBOutlet weak var homeTeamGoals: UILabel!
@@ -24,10 +24,10 @@ class MatchTableViewCell: UITableViewCell {
     @IBAction func showMoreInfo(_ sender: Any) {
     }
     
-    // MARK:- Properties
+    // MARK: - Properties
     private var currentModel: MatchModel!
 
-    // MARK:- Methods
+    // MARK: - Methods
     func configured(withModel model: MatchModel) -> Self {
         
         currentModel = model

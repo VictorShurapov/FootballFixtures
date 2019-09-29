@@ -49,11 +49,9 @@ class FixturesViewController: UIViewController {
             UITabBarItem(title: NSLocalizedString("1/4", comment: "TabBar title for coming products"), image: nil, tag: 1),
             UITabBarItem(title: NSLocalizedString("1/2", comment: "TabBar title for coming products"), image: nil, tag: 2),
             UITabBarItem(title: NSLocalizedString("X", comment: "TabBar title for coming products"), image: nil, tag: 3)
-            
         ]
         tabBar.itemAppearance = .titles
         tabBar.autoresizingMask = [.flexibleWidth]
-
         tabBar.barTintColor = .black
         tabBar.inkColor = .clear
         tabBar.tintColor = UIColor(red: 30/255, green: 215/255, blue: 96/255, alpha: 1.0)
@@ -63,6 +61,7 @@ class FixturesViewController: UIViewController {
         tabBar.unselectedItemTitleFont = UIFont.systemFont(ofSize: 14)
         tabBar.displaysUppercaseTitles = false
         tabBar.alignment = .justified
+        
         tabBar.sizeToFit()
         roundsTabBar.addSubview(tabBar)
     }
@@ -81,14 +80,8 @@ extension FixturesViewController: UITableViewDataSource {
 
 extension FixturesViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView()
-        view.backgroundColor = .clear
-        return view
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
