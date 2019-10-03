@@ -11,6 +11,8 @@ pod 'MaterialComponents'
 pod 'Moya'
 pod 'Kingfisher'
 pod 'Cachable'
+pod 'IQKeyboardManagerSwift'
+
 
 
 end
