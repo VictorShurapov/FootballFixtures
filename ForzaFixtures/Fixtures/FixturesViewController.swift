@@ -11,7 +11,8 @@ import MaterialComponents
 import Cachable
 
 class FixturesViewController: UIViewController {
-
+    
+    // MARK: - IBOutlets and IBActions
     @IBOutlet weak var roundsTabBar: UIView!
     @IBOutlet weak var tableView: FixturesTableView!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
@@ -21,6 +22,7 @@ class FixturesViewController: UIViewController {
     // MARK: - ViewModel
     fileprivate let viewModel = FixturesViewModel()
     
+    // MARK: - ViewController's Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,7 +36,6 @@ class FixturesViewController: UIViewController {
 //    }
 
     // MARK: - Methods
-
     private func getFixtures() {
         viewModel.getFixturesForWorldCup(completion: { self.setupFixturesForRoundWith() }, errorDescription: { (errorDescription) in
             self.showAlert(errorMessage: errorDescription)
