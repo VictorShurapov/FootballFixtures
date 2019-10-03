@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		53EC0303C8FFB8BF2255D2E0 /* Pods_ForzaFixtures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B67798ADC7A3BB8DBB3625 /* Pods_ForzaFixtures.framework */; };
 		B25DBCC2233E85D900C716D1 /* FixturesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25DBCC1233E85D900C716D1 /* FixturesTableView.swift */; };
+		B2A6164A2340FF4D00817067 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A616492340FF4D00817067 /* Validation.swift */; };
+		B2AC4CBA23410A4B00DEE671 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AC4CB923410A4B00DEE671 /* RegistrationViewController.swift */; };
+		B2AC4CBC23410A6D00DEE671 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AC4CBB23410A6D00DEE671 /* RegistrationViewModel.swift */; };
+		B2AC4CBE23410A7800DEE671 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2AC4CBD23410A7800DEE671 /* Registration.storyboard */; };
+		B2AC4CC323421B5400DEE671 /* ForzaFixturesUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AC4CC223421B5400DEE671 /* ForzaFixturesUIView.swift */; };
 		B2C5E8122327D2F900505305 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C5E8112327D2F900505305 /* AppDelegate.swift */; };
 		B2C5E8192327D2FB00505305 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2C5E8182327D2FB00505305 /* Assets.xcassets */; };
 		B2C5E81C2327D2FB00505305 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2C5E81A2327D2FB00505305 /* LaunchScreen.storyboard */; };
@@ -29,6 +34,11 @@
 		20B67798ADC7A3BB8DBB3625 /* Pods_ForzaFixtures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForzaFixtures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		647474358397BC2D94EC2879 /* Pods-ForzaFixtures1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForzaFixtures1.release.xcconfig"; path = "Target Support Files/Pods-ForzaFixtures1/Pods-ForzaFixtures1.release.xcconfig"; sourceTree = "<group>"; };
 		B25DBCC1233E85D900C716D1 /* FixturesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixturesTableView.swift; sourceTree = "<group>"; };
+		B2A616492340FF4D00817067 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		B2AC4CB923410A4B00DEE671 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		B2AC4CBB23410A6D00DEE671 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		B2AC4CBD23410A7800DEE671 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
+		B2AC4CC223421B5400DEE671 /* ForzaFixturesUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForzaFixturesUIView.swift; sourceTree = "<group>"; };
 		B2C5E80E2327D2F900505305 /* ForzaFixtures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForzaFixtures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2C5E8112327D2F900505305 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2C5E8182327D2FB00505305 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,6 +76,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B2A6164B234100C000817067 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B2A616492340FF4D00817067 /* Validation.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B2AC4CBF23410A8100DEE671 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				B2AC4CB923410A4B00DEE671 /* RegistrationViewController.swift */,
+				B2AC4CBB23410A6D00DEE671 /* RegistrationViewModel.swift */,
+				B2AC4CBD23410A7800DEE671 /* Registration.storyboard */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
 		B2C5E8052327D2F900505305 = {
 			isa = PBXGroup;
 			children = (
@@ -87,12 +115,14 @@
 		B2C5E8102327D2F900505305 /* ForzaFixtures */ = {
 			isa = PBXGroup;
 			children = (
+				B2A6164B234100C000817067 /* Services */,
 				B2C5E828232A9FBD00505305 /* Fixtures */,
 				B2CB7C4A2333CB82000E356F /* Models */,
 				B2C5E832232C2AB700505305 /* Network */,
 				B2C5E83A23303B2C00505305 /* Protocols */,
 				B2C5E831232C2AAB00505305 /* Extensions */,
 				B2C5E8112327D2F900505305 /* AppDelegate.swift */,
+				B2AC4CBF23410A8100DEE671 /* Registration */,
 				B2C5E8182327D2FB00505305 /* Assets.xcassets */,
 				B2C5E81A2327D2FB00505305 /* LaunchScreen.storyboard */,
 				B2C5E81D2327D2FB00505305 /* Info.plist */,
@@ -116,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				B2C5E82F232C2A5300505305 /* ForzaFixturesUIViewController.swift */,
+				B2AC4CC223421B5400DEE671 /* ForzaFixturesUIView.swift */,
 				B2C5E8362330387800505305 /* ForzaFixturesUITableView.swift */,
 			);
 			path = Extensions;
@@ -226,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2C5E827232A9FB600505305 /* Fixtures.storyboard in Resources */,
+				B2AC4CBE23410A7800DEE671 /* Registration.storyboard in Resources */,
 				B2C5E81C2327D2FB00505305 /* LaunchScreen.storyboard in Resources */,
 				B2C5E8192327D2FB00505305 /* Assets.xcassets in Resources */,
 			);
@@ -299,11 +331,15 @@
 			files = (
 				B2C5E82A232AA02300505305 /* FixturesViewModel.swift in Sources */,
 				B2C5E834232C388A00505305 /* MatchModel.swift in Sources */,
+				B2A6164A2340FF4D00817067 /* Validation.swift in Sources */,
 				B2C5E830232C2A5300505305 /* ForzaFixturesUIViewController.swift in Sources */,
 				B25DBCC2233E85D900C716D1 /* FixturesTableView.swift in Sources */,
 				B2C5E83923303A0500505305 /* Reusable.swift in Sources */,
+				B2AC4CBA23410A4B00DEE671 /* RegistrationViewController.swift in Sources */,
+				B2AC4CC323421B5400DEE671 /* ForzaFixturesUIView.swift in Sources */,
 				B2C5E82C232AA69200505305 /* MatchTableViewCell.swift in Sources */,
 				B2C5E82E232BFD3F00505305 /* ForzaFixturesAPI.swift in Sources */,
+				B2AC4CBC23410A6D00DEE671 /* RegistrationViewModel.swift in Sources */,
 				B2C5E8122327D2F900505305 /* AppDelegate.swift in Sources */,
 				B2C5E8372330387800505305 /* ForzaFixturesUITableView.swift in Sources */,
 				B2C5E825232A9F9800505305 /* FixturesViewController.swift in Sources */,
